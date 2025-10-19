@@ -24,8 +24,8 @@ namespace Hospital.BLL.Service.ReservationService
             var Reservations = await _context.GetAllReservation();
             var ReserveDto = Reservations.Select(x => new GetReservationDto()
             {
-                Id = x.Id,
                 ReservationTime = x.ReservationTime,
+                Status = x.Status,
                 PatientId = x.PatientId,
                 DoctorId = x.DoctorId,
                 ClinicId= x.ClinicId
@@ -38,6 +38,7 @@ namespace Hospital.BLL.Service.ReservationService
             var reserve = new Reservation()
             {
                 ReservationTime = reserveDto.ReservationTime,
+                Status = reserveDto.Status,
                 PatientId = reserveDto.PatientId,
                 DoctorId = reserveDto.DoctorId,
                 ClinicId = reserveDto.ClinicId
@@ -55,8 +56,8 @@ namespace Hospital.BLL.Service.ReservationService
 
             var ReserveDto = Reservations.Select(x => new GetReservationDto()
             {
-                Id = x.Id,
                 ReservationTime = x.ReservationTime,
+                Status = x.Status,
                 PatientId = x.PatientId,
                 DoctorId = x.DoctorId,
                 ClinicId = x.ClinicId
@@ -70,8 +71,8 @@ namespace Hospital.BLL.Service.ReservationService
 
             var ReserveDto = Reservations.Select(x => new GetReservationDto()
             {
-                Id = x.Id,
                 ReservationTime = x.ReservationTime,
+                Status = x.Status,
                 PatientId = x.PatientId,
                 DoctorId = x.DoctorId,
                 ClinicId = x.ClinicId

@@ -22,8 +22,11 @@ namespace Hospital.DAL.Repo.Reservations
         }
         public async Task<IEnumerable<Entities.Reservation>> GetAllReservation()
         {
-            return await _context.Reservations.ToListAsync();
-
+            return await _context.Reservations
+                            .Include(r => r.Doctor)
+                            .Include(r => r.Patient)
+                            .Include(r => r.Clinic) 
+                            .ToListAsync();
         }
         public async Task<int> Add(Entities.Reservation Reserve)
         {
