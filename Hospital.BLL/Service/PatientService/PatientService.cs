@@ -29,6 +29,7 @@ namespace Hospital.BLL.Service.PatientService
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 DateOfBirth = x.DateOfBirth,
+                Address=x.Address,
                 Phone = x.Phone
             });
             return PatientsDto;
@@ -40,6 +41,7 @@ namespace Hospital.BLL.Service.PatientService
                 FirstName = patientDto.FirstName,
                 LastName = patientDto.LastName,
                 DateOfBirth = patientDto.DateOfBirth,
+                Address = patientDto.Address,
                 Phone = patientDto.Phone
             };
 
